@@ -32,7 +32,7 @@ class ShowProduct extends StatelessWidget {
             Icon(Icons.delete),
             SizedBox(width: 10,),
             InkWell(
-                onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>UpdateProduct())),
+              onTap:()=> Navigator.pushNamed(context,'/update'),
                 child: Icon(Icons.edit))
           ],
         )

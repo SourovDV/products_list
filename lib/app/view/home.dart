@@ -42,7 +42,16 @@ class _ProductListState extends State<ProductList> {
             }
         ),
       ),
-      floatingActionButton: FloatingActionButton(onPressed: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>AddNewProducts())),child: Icon(Icons.add),),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          final result = await Navigator.pushNamed(context, '/add');
+          if (result == true) {
+            _getProducts(); // নতুন product load
+          }
+        },
+        child: Icon(Icons.add),
+      ),
+
     );
   }
 
